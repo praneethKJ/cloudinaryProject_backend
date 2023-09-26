@@ -4,7 +4,7 @@ const router = express.Router();
 //page one: psot data
 router.post('/', async (req, res) => {
     console.log('Request Body:', req.body);
-    const { title, description, imageUrl, videoUrl } = req.body; // Corrected destructuring
+    const { title, description, imageUrl, videoUrl } = req.body; // array destructuring
 
     if (!imageUrl || !videoUrl) {
         return res.status(400).json({ errors: "Image and video URLs are both required." });
@@ -51,6 +51,7 @@ router.get('/', async (req, res) => {
     })
 }
 });
+
 //page three: get specific video
 router.get('/:id', async (req, res) => {
     try{

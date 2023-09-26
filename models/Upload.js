@@ -11,11 +11,11 @@ const UploadSchema = new Schema({
     },
     imageUrl: {
         type: String,
-        default: '', // Set a default value that makes sense for your application
+        default: '',
     },
     videoUrl: {
         type: String,
-        default: '', // Set a default value that makes sense for your application
+        default: '', 
     },
     createdAt: {
         type: Date,
