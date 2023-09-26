@@ -13,9 +13,12 @@ const corsOptions = {
   origin: 'http://localhost:5173',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
-app.use(cors(corsOptions));
+app.use(cors({
+  'allowedHeaders':['content-Type'],
+  'origin':'*',
+  'preflightContinue':true
+}));
 app.use(express.json());
-
 // Routes for uploading and playing videos
 app.use('/api/upload', uploadRoutes);
 // app.use('/api/play', require('./routes/play'));
